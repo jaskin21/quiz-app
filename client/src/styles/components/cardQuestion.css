@@ -1,0 +1,37 @@
+.card-question-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 30px;
+  position: absolute;
+  height: 80px;
+  top: 0;
+  width: 100%;
+  border-bottom: 2px solid gray;
+}
+
+/* Needs Improvement */
+.card-question-question {
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 30px;
+  position: absolute;
+  margin-top: 80px;
+  min-height: 250px;
+  margin-bottom: 80px;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  vertical-align: center;
+}
+
+.card-question-choices {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 2px solid gray;
+}
