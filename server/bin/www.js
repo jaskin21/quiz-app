@@ -46,6 +46,7 @@ function normalizePort(val) {
 
   if (port >= 0) {
     // port number
+    console.log(`Running of port: ${port}`)
     return port;
   }
 

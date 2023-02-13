@@ -6,7 +6,7 @@ const router = express.Router();
 // Get all the item from Items
 router.get('/', async (req, res) => {
   try {
-    const items = await Item.find({});
+    const items = await Item.find({}).limit(20);
     res.status(200).json(items);
   } catch (error) {
     res.status(400).json({
