@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Record = ({ status }) => {
+const Record = ({ record, i }) => {
   return (
     <>
-      <div>{status.record[9].question}</div>
+      <div>{record[i].question}</div>
       <div>
-        The answer is {status.record[9].correct_answer}, your answer is{' '}
-        {status.record[9].user_answer}
+        The answer is {record[i].correct_answer}, your answer is{' '}
+        {record[i].user_answer}
       </div>
     </>
   );

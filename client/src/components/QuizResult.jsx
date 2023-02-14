@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Record from './subComponents/Record';
 
-const QuizResult = ({ status }) => {
+const QuizResult = ({ record }) => {
   const rows = [];
-  for (let i = 0; i < status.record.length; i++) {
-    rows.push(<Record key={i} status={status} />);
+  for (let i = 0; i < record.length; i++) {
+    rows.push(<Record key={i} record={record} i={i} />);
   }
-  console.log(status.record.length);
   return (
     <div className='card-result'>
       <div className='container'>

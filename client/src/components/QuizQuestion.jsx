@@ -8,12 +8,12 @@ const QuizQuestion = ({ status, setStatus, clickAnswer }) => {
         <div className='card-question-header'>
           <div className='card-question-icon'>icon</div>
           <div className='card-question-category'>
-            Category: {status.record[status.question].category}
+            Category: {status.list[status.question].category}
           </div>
           <div className='card-question-paging'>{status.page} out of 10</div>
         </div>
         <div className='card-question-question'>
-          {status.record[status.question].question}
+          {status.list[status.question].question}
         </div>
         <div className='card-question-choices'>
           <input

@@ -4,11 +4,11 @@ import QuizResult from '../components/QuizResult';
 import { StatusContext } from '../hooks/statusContext';
 
 const Quiz = () => {
-  let { status, setStatus, result, setResult } = useContext(StatusContext);
+  let { status, setStatus, result, setResult, record, setRecord } =
+    useContext(StatusContext);
 
   const clickAnswer = (onClickEvent) => {
-    const currentQuestion = status.record[status.question];
-    console.log(status.record);
+    const currentQuestion = status.list[status.question];
     const targetValue = onClickEvent.target.value;
 
     setStatus({
@@ -20,13 +20,9 @@ const Quiz = () => {
           : status.score + 0,
       page: status.page + 1,
       question: status.question + 1,
-      record: [
-        ...status.record,
-        { ...currentQuestion, user_answer: targetValue },
-      ].filter((value, index, Array) => {
-        return index !== status.question;
-      }),
     });
+
+    setRecord([...record, { ...currentQuestion, user_answer: targetValue }]);
 
     if (status.question >= 9) {
       setResult(true);
@@ -36,7 +32,7 @@ const Quiz = () => {
   return (
     <div className='main-container'>
       {result ? (
-        <QuizResult status={status} />
+        <QuizResult record={record} />
       ) : (
         <QuizQuestion
           status={status}
