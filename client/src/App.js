@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import CardHome from './components/CardHome';
-import CardQuestion from './components/CardQuestion';
-import CardResult from './components/CardResult';
 import NotFound from './pages/NotFound';
 import { StatusProvider } from './hooks/statusContext';
 
 import './styles/index.css';
+import Home from './pages/Home';
+import Quiz from './pages/Quiz';
 
 function App() {
   return (
@@ -15,22 +14,14 @@ function App() {
       <div className='App'>
         <Routes>
           <Route path='/'>
-            <Route index element={<CardHome />} />
+            <Route index element={<Home />} />
             <Route
-              element={
-                <StatusProvider>
-                  <CardQuestion />
-                </StatusProvider>
-              }
               path='quiz'
-            />
-            <Route
               element={
                 <StatusProvider>
-                  <CardResult />
+                  <Quiz />{' '}
                 </StatusProvider>
               }
-              path='result'
             />
           </Route>
           <Route element={<NotFound />} path='*' />

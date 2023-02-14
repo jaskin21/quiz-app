@@ -4,9 +4,11 @@ import '../styles/pages/notFound.css';
 
 const NotFound = () => {
   return (
-    <main className='main'>
-      <div className='fof'>
-        <h1>Error 404</h1>
+    <main className='main-container'>
+      <div className='main'>
+        <div className='fof'>
+          <h1>Error 404</h1>
+        </div>
       </div>
     </main>
   );

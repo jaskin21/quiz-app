@@ -3,7 +3,7 @@ import '../styles/components/cardHome.css';
 import '../styles/components/shared/container.css';
 import ZeniarkLogo from '../images/zeniark-logo.png';
 
-const CardHome = () => {
+const Welcome = () => {
   return (
     <div className='card-home'>
       <div className='container'>
@@ -31,4 +31,4 @@ const CardHome = () => {
   );
 };
 
-export default CardHome;
+export default Welcome;

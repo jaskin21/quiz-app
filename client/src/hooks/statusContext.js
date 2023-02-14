@@ -4,6 +4,7 @@ import { listOfQuestions } from './storeContext';
 export const StatusContext = createContext();
 
 export const StatusProvider = (props) => {
+  const [result, setResult] = useState(false);
   const [status, setStatus] = useState({
     page: 1,
     question: 0,
@@ -12,7 +13,7 @@ export const StatusProvider = (props) => {
   });
 
   return (
-    <StatusContext.Provider value={{ status, setStatus }}>
+    <StatusContext.Provider value={{ status, setStatus, result, setResult }}>
       {props.children}
     </StatusContext.Provider>
   );
